@@ -1,0 +1,109 @@
+public class Calculator {
+	
+	//оголошуємо компоненти
+	JPanel windowContent;
+	JTextField displayField;
+	JButton button0;
+	JButton button1;
+	JButton button2;
+	JButton button3;
+	JButton button4;
+	JButton button5;
+	JButton button6;
+	JButton button7;
+	JButton button8;
+	JButton button9;
+	JButton buttonPoint;
+	JButton buttonEqual;
+	JPanel p1;
+	JButton buttonPlus;
+	JButton buttonMinus;
+	JButton buttonMultiple;
+	JButton buttonDivision;
+	JPanel p2;
+	
+	
+	//створюємо конструктор який буде викликатись при створенні нового об'єкта класу
+	//калькулятор за допомогою грід і бордер лайаутів
+	Calculator(){
+		
+		//створюємо основну панель
+		windowContent = new JPanel();
+		
+		//створюємо бордер лайаут і накладаємоого на панель
+		BorderLayout borderLay = new BorderLayout(); 
+		windowContent.setLayout(borderLay);
+		
+		//створюємо текстове поле і накладаємо його в північну частину бордер 
+		//лайаута в основній панелі
+		displayField = new JTextField();
+		windowContent.add("North", displayField);
+		
+		//створюємо кнопки
+		 button0=new JButton("0");
+		 button1=new JButton("1");
+		 button2=new JButton("2");
+		 button3=new JButton("3");
+		 button4=new JButton("4");
+		 button5=new JButton("5");
+		 button6=new JButton("6");
+		 button7=new JButton("7");
+		 button8=new JButton("8");
+		 button9=new JButton("9");
+		 buttonPoint = new JButton(".");
+		 buttonEqual=new JButton("=");
+		 buttonPlus = new JButton("+");
+		 buttonMinus = new JButton("-");
+		 buttonMultiple = new JButton("*");
+		 buttonDivision = new JButton("/");
+		 
+		 //створюємо панель на якій будуть кнопки і створюємо грід лайаут який буде 
+		 //накладатись на панель
+		 p1 = new JPanel();
+		 GridLayout numberLayout = new GridLayout(4, 3);
+		 p1.setLayout(numberLayout);
+		 
+		 //додаємо кнопки на панель
+		 p1.add(button0);
+		 p1.add(button1);
+		 p1.add(button2);
+		 p1.add(button3);
+		 p1.add(button4);
+		 p1.add(button5);
+		 p1.add(button6);
+		 p1.add(button7);
+         p1.add(button8);
+		 p1.add(button9);
+		 p1.add(buttonPoint);
+		 p1.add(buttonEqual);
+		 
+		 //розміщуємо панель в центрі головної панелі
+		 windowContent.add("Center", p1);
+		 
+		 p2 = new JPanel();
+		 GridLayout grid = new GridLayout(4, 1);
+		 p2.setLayout(grid);
+		 
+		 p2.add(buttonPlus);
+		 p2.add(buttonMinus);
+		 p2.add(buttonMultiple);
+		 p2.add(buttonDivision);
+		 
+		 windowContent.add("West", p2);
+		 
+		 
+		 
+		 //створюємо фрейм
+		 JFrame frame = new JFrame();
+		 frame.setContentPane(windowContent);
+		 frame.pack();
+		 frame.setVisible(true);
+	 
+	}
+	
+	public static void main(String[] args) {
+		Calculator c  = new Calculator();
+
+	}
+
+}
